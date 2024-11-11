@@ -1,7 +1,7 @@
 <script setup>
 // import HelloWorld from './components/HelloWorld.vue'
 // import TheWelcome from './components/TheWelcome.vue'
-import LoginRegister from './assets/Pages/LoginRegister.vue';
+// import LoginRegister from './assets/Pages/LoginRegister.vue';
 
 
 
@@ -15,8 +15,7 @@ import LoginRegister from './assets/Pages/LoginRegister.vue';
     </header>
 
     <main>
-    <LoginRegister></LoginRegister>
-      
+      <router-view />
     </main>
   </div>
   

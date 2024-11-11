@@ -3,9 +3,11 @@ import { ref } from "vue";
 import { userService } from "@/services/userService";
 import GeneralButton from "../buttons/GeneralButton.vue";
 import consts from "@/consts";
+import { useRouter } from 'vue-router';
 
 // const props = defineProps(['changeLoginState'])
 const emit = defineEmits(["changeLoginState", "showError"]);
+const router = useRouter();
 
 const userName = ref("");
 const password = ref("");
@@ -20,6 +22,7 @@ async function onLogin() {
     emit("showError", null);
     
     console.log("success!")
+    await router.push(consts.routes.home);
   } catch (e) {
     console.log("error: ", e);
     emit("showError", "User does not exists, or password is wrong");
